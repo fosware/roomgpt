@@ -13,6 +13,7 @@ function SelectInp () {
         {value:"bedroom", label:"Bedroom"},
         {value:"bathroom", label:"Bathroom"},
         {value:"kitchen", label:"Kitchen"},
+        {value:"office work", label:"Office"},
     ]
 
   return (
