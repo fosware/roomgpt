@@ -4,11 +4,26 @@ import { UploadDropzone } from "@bytescale/upload-widget-react";
 import Image from "next/image";
 import { useImage } from "@/store/useStore";
 
+
+interface EditorOptions {
+  images: {
+    crop: boolean;
+  };
+}
+
+interface UploadDropzoneConfig {
+  apiKey: string;
+  editor: EditorOptions;
+  maxFileCount: number;
+}
+
+
+
 function UploadDnd() {
   const [preview, setPreview] = useState<string>();
   const [loading, setLoading] = useState<boolean>(true);
   const setImageUrl=useImage((state:any)=>state.setImageUrl)
-
+/*
   const options = {
     apiKey: process.env.NEXT_PUBLIC_BYTESCALE_API_KEY,
     editor: {
@@ -18,6 +33,16 @@ function UploadDnd() {
     },
     maxFileCount: 1,
   };
+*/
+const options: UploadDropzoneConfig = {
+  apiKey: process.env.NEXT_PUBLIC_BYTESCALE_API_KEY || "",
+  editor: {
+    images: {
+      crop: false,
+    },
+  },
+  maxFileCount: 1,
+};
 
   function onUpdate({ uploadedFiles }: any) {
     if (uploadedFiles.length !== 0) {
