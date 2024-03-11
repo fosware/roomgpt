@@ -5,10 +5,10 @@ import couch from "@/assets/couch.svg";
 import { useLoading, useOutput } from '@/store/useStore';
 
 
-async function  PreviewImg()  {
+function PreviewImg() {
     const isLoading = useLoading((state: any) => state.isLoading);
     const isGenerating = useLoading((state: any) => state.isGenerating);
-    const  output = await useOutput((state: any) => state.output);
+    const  output = useOutput((state: any) => state.output);
     return isLoading ? (
       <div
         className={`${
@@ -18,9 +18,9 @@ async function  PreviewImg()  {
       </div>
     ) : (
       <div className="my-auto">
-        <Image width={500} height={200} src={output}         
+        <img src={output}         
             alt="output" 
-            className='rounded-lg object-cover md:w-[500px] w-[350px] h-[200px] my-auto md:h-[300px]'
+            className='rounded-lg object-cover w:auto h:auto md:w-[500px] w-[350px] h-[200px] my-auto md:h-[300px]'
         />       
 
       </div>
