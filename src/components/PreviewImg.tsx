@@ -5,10 +5,10 @@ import couch from "@/assets/couch.svg";
 import { useLoading, useOutput } from '@/store/useStore';
 
 
-function PreviewImg() {
+async function  PreviewImg()  {
     const isLoading = useLoading((state: any) => state.isLoading);
     const isGenerating = useLoading((state: any) => state.isGenerating);
-    const output = useOutput((state: any) => state.output);
+    const  output = await useOutput((state: any) => state.output);
     return isLoading ? (
       <div
         className={`${
