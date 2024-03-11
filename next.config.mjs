@@ -8,7 +8,12 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'upcdn.io',
         pathname: '**',
-      },
+      }, 
+      {
+        protocol: 'https',
+        hostname: 'replicate.delivery',
+        pathname: '**',
+      }
     ],
   
   }  
