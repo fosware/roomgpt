@@ -18,10 +18,9 @@ function PreviewImg() {
       </div>
     ) : (
       <div className="my-auto">
-        <img src={output}         
-        alt="output" className='rounded-lg object-cover md:w-[500px] w-[350px] h-[200px] my-auto md:h-[300px]'
-
-
+        <Image width={500} height={200} src={output}         
+            alt="output" 
+            className='rounded-lg object-cover md:w-[500px] w-[350px] h-[200px] my-auto md:h-[300px]'
         />       
 
       </div>

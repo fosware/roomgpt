@@ -18,6 +18,7 @@ export async function POST(req: Request) {
 
           }
         }
-      );
+      );            
+      console.log(output);
       return NextResponse.json(output);
 }
